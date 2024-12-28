@@ -5,7 +5,6 @@
   "author": "Ravi",
   "description": "A Chrome Extension that helps you to solve DSA problems",
   "permissions": [
-    "webRequest",
     "activeTab",
     "storage",
     "tabs",
