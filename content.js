@@ -246,66 +246,6 @@ observer.observe(document.body, { childList: true, subtree: true });
 
 
 
-// General observer for other functions
-// const generalObserver = new MutationObserver(() => {
-//     handleRouteChange();
-//     getTheme();
-//     fetchUserCode();
-//     uniqueKey = generateUniqueKey();
-//     console.log("General DOM changes observed.");
-// });
-
-// // Start observing the entire body for general functionality
-// generalObserver.observe(document.body, { childList: true, subtree: true });
-
-// // Variables for messagesContainer observation
-// let messagesObserver = null;
-// let isMessagesObserving = false;
-
-// // Function to start observing messagesContainer
-// function startMessagesContainerObserving() {
-//     const messagesContainer = document.getElementById("messages-container");
-
-//     if (messagesContainer && !isMessagesObserving) {
-//         messagesObserver = new MutationObserver(() => {
-//             console.log("Observed changes in messages-container.");
-//             getChatFromLocalStorage((messages) => displayChatMessages(messages, messagesContainer));
-//         });
-
-//         messagesObserver.observe(messagesContainer, { childList: true, subtree: true });
-//         isMessagesObserving = true;
-//         console.log("Started observing messages-container.");
-//     }
-// }
-
-// // Function to stop observing messagesContainer
-// function stopMessagesContainerObserving() {
-//     if (messagesObserver && isMessagesObserving) {
-//         messagesObserver.disconnect();
-//         isMessagesObserving = false;
-//         console.log("Stopped observing messages-container.");
-//     }
-// }
-
-// // Monitor the presence of messagesContainer dynamically
-// function monitorMessagesContainerPresence() {
-//     const checkInterval = setInterval(() => {
-//         const messagesContainer = document.getElementById("messages-container");
-
-//         if (messagesContainer) {
-//             startMessagesContainerObserving(); // Start observing when present
-//             clearInterval(checkInterval); // Stop checking further
-//         } else {
-//             stopMessagesContainerObserving(); // Stop observing when not present
-//         }
-//     }, 500);
-// }
-
-// // Call monitor function to dynamically handle messages-container
-// monitorMessagesContainerPresence();
-
-
-
 
 
 // ----------- Function to generate uniqueId for each problem to store its chats with AI seperatly ---------------
@@ -1085,6 +1025,8 @@ async function callGeminiAPI(userInput) {
 
 
 
+
+
 // ---------------------- Function to save chat messages to local storage   ----------------------
     // function saveChatToLocalStorage(chatMessages) {
         // const uniqueKey = generateUniqueKey();
@@ -1252,3 +1194,61 @@ async function callGeminiAPI(userInput) {
     // }
 
     // const ActualQueryToSendAI = { CompleteMessage};
+
+// General observer for other functions
+// const generalObserver = new MutationObserver(() => {
+//     handleRouteChange();
+//     getTheme();
+//     fetchUserCode();
+//     uniqueKey = generateUniqueKey();
+//     console.log("General DOM changes observed.");
+// });
+
+// Start observing the entire body for general functionality
+// generalObserver.observe(document.body, { childList: true, subtree: true });
+
+// Variables for messagesContainer observation
+// let messagesObserver = null;
+// let isMessagesObserving = false;
+
+// Function to start observing messagesContainer
+// function startMessagesContainerObserving() {
+//     const messagesContainer = document.getElementById("messages-container");
+
+//     if (messagesContainer && !isMessagesObserving) {
+//         messagesObserver = new MutationObserver(() => {
+//             console.log("Observed changes in messages-container.");
+//             getChatFromLocalStorage((messages) => displayChatMessages(messages, messagesContainer));
+//         });
+
+//         messagesObserver.observe(messagesContainer, { childList: true, subtree: true });
+//         isMessagesObserving = true;
+//         console.log("Started observing messages-container.");
+//     }
+// }
+
+// Function to stop observing messagesContainer
+// function stopMessagesContainerObserving() {
+//     if (messagesObserver && isMessagesObserving) {
+//         messagesObserver.disconnect();
+//         isMessagesObserving = false;
+//         console.log("Stopped observing messages-container.");
+//     }
+// }
+
+// Monitor the presence of messagesContainer dynamically
+// function monitorMessagesContainerPresence() {
+//     const checkInterval = setInterval(() => {
+//         const messagesContainer = document.getElementById("messages-container");
+
+//         if (messagesContainer) {
+//             startMessagesContainerObserving(); // Start observing when present
+//             clearInterval(checkInterval); // Stop checking further
+//         } else {
+//             stopMessagesContainerObserving(); // Stop observing when not present
+//         }
+//     }, 500);
+// }
+
+// Call monitor function to dynamically handle messages-container
+// monitorMessagesContainerPresence();
