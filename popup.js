@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     saveButton.addEventListener('click', () => {
         const apiKey = apiKeyInput.value.trim();
         if (apiKey) {
-            chrome.storage.local.set({ apiKey: apiKey }, () => {
+            chrome.storage.sync.set({ apiKey: apiKey }, () => {
                 if (chrome.runtime.lastError) {
                     console.error('Failed to save API key:', chrome.runtime.lastError);
                 } else {
